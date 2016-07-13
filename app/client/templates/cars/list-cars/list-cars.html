@@ -1,0 +1,35 @@
+<template name="ListCars">
+  <h1>Cars List</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Fuel Type</th>
+        <th>Power</th>
+        <th>Updated</th>
+        <th>Created</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each cars}}
+        <tr>
+          <td>{{brand}}</td>
+          <td>{{model}}</td>
+          <td>{{fueltype}}</td>
+          <td>{{power}}</td>
+          <td>
+          <!-- Make a conditional statement saying that the updated at and update owner would be displayed only if the value was updated -->
+          {{updatedAt}}
+          </td> 
+          <td>
+            {{createdAt}}
+            {{owner}}
+          </td>
+          <td>{{#linkTo route='editCar'}}<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>{{/linkTo}}</td> 
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>

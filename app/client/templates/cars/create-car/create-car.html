@@ -1,0 +1,7 @@
+
+<template name="CreateCar">
+  <h1>Create New Car</h1>
+
+  {{> quickForm collection="Cars" id="insertCarForm" type="insert" omitFields="createdAt, updatedAt, owner" buttonClasses="create btn btn-primary" buttonContent="Create"}}
+  
+</template>
