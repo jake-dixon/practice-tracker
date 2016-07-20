@@ -1,19 +1,20 @@
 /*****************************************************************************/
 /* EditCar: Event Handlers */
 /*****************************************************************************/
-Template.EditCar.events({
+Template.editMountain.events({
+	
 });
 
 /*****************************************************************************/
 /* EditCar: Helpers */
 /*****************************************************************************/
-Template.EditCar.helpers({
+Template.editMountain.helpers({
 	beforeRemove: function () {
   	return function (collection, id) {
       var doc = collection.findOne(id);
-      if (confirm('Really delete car: "' + doc.brand + " " + doc.model + '"?')) {
+      if (confirm('Really delete mountain: "' + doc.name + '"?')) {
       this.remove();
-      Router.go('listMountains');  
+      Router.go('mountainsList');  
     }
   };
  },
@@ -27,11 +28,11 @@ Template.EditCar.helpers({
 /*****************************************************************************/
 /* EditCar: Lifecycle Hooks */
 /*****************************************************************************/
-Template.EditCar.onCreated(() => {
+Template.editMountain.onCreated(() => {
 });
 
-Template.EditCar.onRendered(() => {
+Template.editMountain.onRendered(() => {
 });
 
-Template.EditCar.onDestroyed(() => {
+Template.editMountain.onDestroyed(() => {
 });

@@ -35,7 +35,7 @@ Router.route('/cars/:_id', {
 Router.route('/mountains', {
   name: 'listMountains',
   controller: 'MountainsController',
-  actio: 'list',
+  action: 'list',
   where: 'client'
 });
 
@@ -43,5 +43,12 @@ Router.route('/mountains/create', {
   name: 'createMountain',
   controller: 'MountainsController',
   action: 'create',
+  where: 'client'
+});
+
+Router.route('/mountains/:_id', {
+  name: 'editMountain',
+  controller: 'MountainsController',
+  action: 'edit',
   where: 'client'
 });

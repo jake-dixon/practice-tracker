@@ -1,6 +1,11 @@
 <template name="listMountains">
 	<h1>List of Mountains</h1>
+	<button class="create btn btn-primary">Create</button>
+	<div class="table">
 
-	{{> tabular table=TabularTables.Mountains class="table table-striped table-bordered table-condensed"}}
+		{{> tabular table=TabularTables.Mountains id="mountainTable" class="table table-striped table-bordered table-condensed"}}
+
+	</div>
+
 	
 </template>

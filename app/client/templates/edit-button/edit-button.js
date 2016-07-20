@@ -1,30 +1,23 @@
 /*****************************************************************************/
-/* ListCars: Event Handlers */
+/* EditButton: Event Handlers */
 /*****************************************************************************/
-Template.ListCars.events({
-	"click .create": function (event) {
-		Router.go('createCar');
-	}
+Template.EditButton.events({
 });
 
 /*****************************************************************************/
-/* ListCars: Helpers */
+/* EditButton: Helpers */
 /*****************************************************************************/
-Template.ListCars.helpers({
-	cars: function () {
-		return Cars.find();
-	}
+Template.EditButton.helpers({
 });
 
 /*****************************************************************************/
-/* ListCars: Lifecycle Hooks */
+/* EditButton: Lifecycle Hooks */
 /*****************************************************************************/
-Template.ListCars.onCreated(() => {
+Template.EditButton.onCreated(() => {
 });
 
-Template.ListCars.onRendered(() => {
-
+Template.EditButton.onRendered(() => {
 });
 
-Template.ListCars.onDestroyed(() => {
+Template.EditButton.onDestroyed(() => {
 });

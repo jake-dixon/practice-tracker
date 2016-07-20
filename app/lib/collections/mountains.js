@@ -56,10 +56,8 @@ TabularTables.Mountains = new Tabular.Table({
     {data: "trailNumber", title: "Trail Number"},
     {data: "liftNumber", title: "Lift Number"},
     {data: "coast", title: "Coast"},
+    {tmpl: Meteor.isClient && Template.EditButton}
   ],
-
-  tmpl: Meteor.isClient && Template.listMountains
-
 });
 
 //********************************************

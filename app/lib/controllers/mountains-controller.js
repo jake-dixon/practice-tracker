@@ -24,7 +24,7 @@ MountainsController = RouteController.extend({
   // return Posts.findOne({_id: this.params._id});
   
   data: function () {
-    return Mountains.find();
+    return Mountains.findOne({_id: this.params._id});
   },
 
   list: function () {

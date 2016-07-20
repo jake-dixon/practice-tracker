@@ -2,6 +2,14 @@
 /* ListMountains: Event Handlers */
 /*****************************************************************************/
 Template.listMountains.events({
+
+	 "click .edit": function(event) {
+	 	Router.go('editMountain', {_id: this._id})
+	 },
+
+	 "click .create": function(event) {
+	 	Router.go('createMountain');
+	 }
 });
 
 /*****************************************************************************/
