@@ -7,6 +7,7 @@ MountainsController = RouteController.extend({
   
   subscriptions: function() {
     this.subscribe('Mountains');
+    this.subscribe('Comments');
   },
   
   // Subscriptions or other things we want to "wait" on. This also

@@ -18,6 +18,10 @@ Template.listMountains.events({
 Template.listMountains.helpers({
 	mountains: function () {
 		return Mountains.find();
+	},
+
+	comments: function () {
+		return Comments.find();
 	}
 });
 

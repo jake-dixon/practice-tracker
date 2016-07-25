@@ -6,6 +6,17 @@
 		{{> tabular table=TabularTables.Mountains id="mountainTable" class="table table-striped table-bordered table-condensed"}}
 
 	</div>
-
-	
+	{{#if currentUser}}
+	{{> newComment }}
+	{{/if}}
+	<div class="row">
+		<div class="col-md-12">
+			<h4>Comments</h4>
+		</div>
+	</div>
+	{{#each comments}}
+		{{> commentRow this}}
+	{{else}}
+		<label>There are no comments</label>
+	{{/each}}
 </template>
