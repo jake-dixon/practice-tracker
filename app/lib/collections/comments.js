@@ -13,6 +13,12 @@ Schema = {}
     autoValue: function (userId) {
       return Meteor.user().emails[0].address;
     }
+  },
+  time: {
+    type: String,
+    autoValue: function () {
+      return Date()
+    }
   }
 });
 

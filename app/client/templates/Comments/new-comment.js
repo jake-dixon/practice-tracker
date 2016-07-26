@@ -25,5 +25,4 @@ Template.newComment.helpers ({
 	address: function(userId) {
 		return Meteor.user().emails[0].address;
 	}
-
 });
