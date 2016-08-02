@@ -14,8 +14,9 @@ Meteor.methods({
 			owner: Meteor.userId()
 		};
 
-		var commentId = Comments.insert(data);
-		return commentId;
+		Comments.insert(data);
 	}
 });
+
+
 

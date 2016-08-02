@@ -1,22 +1,49 @@
 <template name="listMountains">
-	<h1>List of Mountains</h1>
-	<button class="create btn btn-primary">Create</button>
-	<div class="table">
+	<div class="panel">
+		<h1>List of Mountains</h1>
+		<button class="create btn btn-primary">Create</button>
+		<div class="table">
 
-		{{> tabular table=TabularTables.Mountains id="mountainTable" class="table table-striped table-bordered table-condensed"}}
+			{{> tabular table=TabularTables.Mountains id="mountainTable" class="table table-striped table-bordered table-condensed"}}
 
-	</div>
-	{{#if currentUser}}
-	{{> newComment }}
-	{{/if}}
-	<div class="row">
-		<div class="col-md-12">
-			<h4>Comments</h4>
 		</div>
 	</div>
-	{{#each comments}}
-		{{> commentRow this}}
-	{{else}}
-		<label>There are no comments</label>
-	{{/each}}
+
+	<div class="panel">
+		{{#if currentUser}}
+		{{> newComment }}
+		{{/if}}
+		<div class="row">
+			<div class="col-md-12">
+				<h4>Comments</h4>
+			</div>
+		</div>
+
+		{{#each comments}}
+
+		<div class="row">
+			<div class="col-md-11">
+				<div class="row">
+					<label>{{owner}}</label>
+				</div>
+				<div class="row">
+					{{content}}
+					<i class="delete fa fa-trash" aria-hidden="true"></i>
+				</div>
+				<div class="row">
+					{{time}}
+				</div>
+			</div>
+		</div>
+
+		<hr>
+			{{else}}
+				<label>There are no comments</label>
+			{{/each}}
+
+		<div class="buttons">
+			<button type="button" class="load btn btn-primary">Show More</button>
+			<button type="button" class="less btn btn-primary">Show Less</button>
+		</div>
+	</div>
 </template>

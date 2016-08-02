@@ -35,6 +35,7 @@ Router.route('/cars/:_id', {
 Router.route('/mountains', {
   name: 'listMountains',
   controller: 'MountainsController',
+  limit: function () {return Session.get("limit")},
   action: 'list',
   where: 'client'
 });

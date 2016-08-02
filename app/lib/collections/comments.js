@@ -1,6 +1,20 @@
 import {Mongo} from 'meteor/mongo';
 Comments = new Mongo.Collection('Comments');
 
+  Comments.allow({
+    insert(userId, doc) {
+      return true;
+    },
+
+    update(userId, doc, fieldNames, modifier) {
+      return true;
+    },
+
+    remove(userId, doc) {
+      return true;
+    }
+  });
+
 Schema = {}
 
  Schema.Comment = new SimpleSchema({
@@ -17,7 +31,7 @@ Schema = {}
   time: {
     type: String,
     autoValue: function () {
-      return Date()
+      return moment().calendar();
     }
   }
 });

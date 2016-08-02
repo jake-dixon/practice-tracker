@@ -9,6 +9,28 @@ Template.listMountains.events({
 
 	 "click .create": function(event) {
 	 	Router.go('createMountain');
+	 },
+
+	 "click .delete": function(event) {
+	 	Comments.remove(this._id);
+	 },
+
+	 "click .load": function(event) {
+	 	event.preventDefault();
+
+	 	if (Session.get("limit") <= Comments.find().count()) {
+	 	Session.set("limit", Session.get("limit") + 3);
+	 	//console.log(Session.get("limit"));
+	 	}
+	 },
+
+	 "click .less": function(event) {
+	 	event.preventDefault();
+
+	 	if (Session.get("limit") >= 6) {
+	 	Session.set("limit", Session.get("limit") - 3);
+	 	//console.log(Session.get("limit"));
+	 	}
 	 }
 });
 
@@ -21,7 +43,8 @@ Template.listMountains.helpers({
 	},
 
 	comments: function () {
-		return Comments.find();
+		var limit = Session.get("limit");
+		return Comments.find({}, {limit: limit});
 	}
 });
 
@@ -29,6 +52,7 @@ Template.listMountains.helpers({
 /* ListCars: Lifecycle Hooks */
 /*****************************************************************************/
 Template.listMountains.onCreated(() => {
+	Session.set("limit", 3);
 });
 
 Template.listMountains.onRendered(() => {

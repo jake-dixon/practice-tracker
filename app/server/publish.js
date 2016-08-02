@@ -7,6 +7,6 @@ Meteor.publish('Mountains', function() {
 	return Mountains.find();
 });
 
-Meteor.publish('Comments', function(limit) {
-	return Comments.find({}, {limit: limit});
+Meteor.publish('Comments', function() {
+	return Comments.find({}, {sort: {time: -1}});
 });
